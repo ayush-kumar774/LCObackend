@@ -1,0 +1,21 @@
+{
+  "name": "socialapp",
+  "version": "1.0.0",
+  "description": "a basic social media which returns username,followers and follwing of facebook, instagram and linkedIn",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "api"
+  ],
+  "author": "Aayush Singh",
+  "license": "ISC",
+  "dependencies": {
+    "date-format": "^4.0.6",
+    "express": "^4.17.3",
+    "instagram-web-api": "^2.2.2",
+    "nodemon": "^2.0.15"
+  }
+}
