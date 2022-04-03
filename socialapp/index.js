@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 4000 ;
 
 app.get("/", (req, res) => {
-        res.status(200).send(`<h1>Hello World!</h1>`);
+        res.status(200).send(`<h1>Hello World From Aayush!</h1>`);
 })
 
 app.get("/api/v1/instagram", (req, res) => {
