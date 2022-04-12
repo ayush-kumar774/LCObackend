@@ -16,6 +16,9 @@
     "date-format": "^4.0.6",
     "express": "^4.17.3",
     "instagram-web-api": "^2.2.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "swagger-jsdoc": "^6.2.0",
+    "swagger-ui-express": "^4.3.0",
+    "yamljs": "^0.3.0"
   }
 }
