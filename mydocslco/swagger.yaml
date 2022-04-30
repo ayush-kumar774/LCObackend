@@ -1,0 +1,29 @@
+openapi: "3.0.0"
+info: 
+  title: learn express and swagger
+  description: A segment about writing docs
+  version: 1.1.0
+  contact:
+    email: ayushkumar1234@protonmail.com
+    url: "https://socialapp-ayush.herokuapp.com/api-docs/"
+
+
+# servers:
+#   - url: "https://localhost:4000/api/v1"
+#     description: for local host - secure
+#   - url: "http://localhost:4000/api/v1"
+#     description: for local host - regular
+
+servers:
+  - url: "{protocol}://localhost:4000/api/{version}"
+    description: for local host 
+    variables: 
+      version: 
+        enum:
+          - v1
+          - v2
+      protocol: 
+        enum:
+          - http
+          - https
+
