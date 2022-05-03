@@ -17,13 +17,25 @@ info:
 servers:
   - url: "{protocol}://localhost:4000/api/{version}"
     description: for local host 
-    variables: 
+    variables:
+      protocol: 
+        enum:
+          - http
+          - https 
       version: 
         enum:
           - v1
           - v2
-      protocol: 
-        enum:
-          - http
-          - https
+      
+
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+    BearerAuth:
+      type: http
+      scheme: bearer
 
