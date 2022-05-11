@@ -8,11 +8,69 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
+let courses = [
+        {
+                id: "11",
+                name: "Learn ReactJS",
+                price: 299
+        },
+        {
+                id: "22",
+                name: "Learn Angular",
+                price: 399
+        },
+        {
+                id: "33",
+                name: "Learn Node JS",
+                price: 499
+        },
+]
+
+function getRandomInt(max) {
+        return Math.floor(Math.random() * max) ;
+} // this will return number from 0 to max - 1 in random order.
+
+let docsObject = [];
+
+docsObject.push(
+        {
+        name: "JSDoc",
+        rating: "4.2"
+        }
+);
+
+docsObject.push(
+        {
+                name: "Docusaurus",
+                rating: "4.5"
+        }
+);
+
+docsObject.push(
+        {
+                name: "apiDoc",
+                rating: "4.6"
+        }
+);
 
 app.get("/", (req, res) => {
                 res.send("Hello from The One Who Is Hated");
         }
 );
 
+app.get("/api/v1/docs", (req, res) => {
+        res.send("Hello from The Hated One's docs");
+}
+);
+
+app.get("/api/v1/docobject", (req, res) => {
+        res.send(docsObject[getRandomInt(docsObject.length)]);
+}
+);
+
+app.get("/api/v1/courses", (req, res) => {
+        res.send(courses);
+}
+);
 
 app.listen(4000, () => console.log(`Server is running at port 4000...`));

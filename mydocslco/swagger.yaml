@@ -22,10 +22,12 @@ servers:
         enum:
           - http
           - https 
+        default: http
       version: 
         enum:
           - v1
           - v2
+        default: v1
       
 
 
@@ -39,3 +41,68 @@ components:
       type: http
       scheme: bearer
 
+
+paths:
+  /docs:
+    get:
+      tags:
+        - Strings
+      summary: returns a greet message from us.
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "mystring"
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /docobject:
+    get:
+      tags:
+        - Objects
+      summary: returns an unique course.
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  rating:
+                    type: number
+                    format : float
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /courses:
+    get:
+      tags:
+        - Array
+      summary: returns all courses available.
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  price:
+                    type: number
+                    format : float
+        400:
+          description: bad request
+        500:
+          description: internal server error
