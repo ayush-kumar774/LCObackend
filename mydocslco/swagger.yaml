@@ -93,15 +93,17 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  price:
-                    type: number
-                    format : float
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    price:
+                      type: number
+                      format : float
         400:
           description: bad request
         500:
