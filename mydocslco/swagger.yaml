@@ -98,12 +98,85 @@ paths:
                   type: object
                   properties:
                     id:
-                      type: number
+                      type: string
                     name:
                       type: string
                     price:
                       type: number
                       format : float
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /mycourses/{courseId}:
+    get:
+      tags:
+        - Array Object
+      summary: returns course based on request id.
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          default: 22
+          schema: 
+            type: string
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  price:
+                    type: number
+                    format : float
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /addCourse:
+    post:
+      tags:
+        - Array Object
+      summary: add a new course to existing courses.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                price:
+                  type: number
+                  format : float
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  price:
+                    type: number
+                    format : float
         400:
           description: bad request
         500:
