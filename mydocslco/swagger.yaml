@@ -168,15 +168,62 @@ paths:
           content:
             application/json:
               schema:
+                type: boolean
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /coursequery:
+    get:
+      tags:
+        - Strings
+      summary: trying to learn about query.
+      parameters:
+        - name: location
+          in: query
+          required: true
+          schema: 
+            type: string
+            enum: [Delhi, London, Gopalganj]
+        - name: device
+          in: query
+          required: true
+          schema: 
+            type: string
+            enum: [IOS, Android, Windows, Linux, MacOS]
+      responses:
+        200:
+          description: All good success
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
+                  location:
                     type: string
-                  name:
+                  device:
                     type: string
-                  price:
-                    type: number
-                    format : float
+        400:
+          description: bad request
+        500:
+          description: internal server error
+  /imageupload:
+    post:
+      tags:
+        - Images
+      summary: trying to learn about storing files.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        200:
+          description: All good success
         400:
           description: bad request
         500:
