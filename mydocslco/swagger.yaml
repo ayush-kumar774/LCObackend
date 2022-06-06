@@ -212,6 +212,9 @@ paths:
       tags:
         - Images
       summary: trying to learn about storing files.
+      parameters:
+        - in: header
+          name: auth
       requestBody:
         content:
           multipart/form-data:
